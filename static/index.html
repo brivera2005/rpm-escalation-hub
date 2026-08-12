@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>RPM Escalation Hub</title>
+ <link rel="stylesheet" href="/static/styles.css" />
+ <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+</head>
+<body>
+ <div class="app">
+ <header class="topbar">
+ <div class="brand">
+ <span class="brand-mark">♡</span>
+ <div>
+ <h1>RPM Escalation Hub</h1>
+ <p class="subtitle">Remote monitoring · care-pathway rules · nurse queue</p>
+ </div>
+ </div>
+ <div class="topbar-meta">
+ <div class="live-pill" id="liveStatus"><span class="pulse-dot"></span>Connecting…</div>
+ <time id="serverTime" class="mono"> - </time>
+ </div>
+ </header>
+
+ <section class="stats-row" id="statsRow">
+ <div class="stat-card"><span class="stat-label">Patients</span><span class="stat-value" id="statPatients"> - </span></div>
+ <div class="stat-card critical"><span class="stat-label">Critical</span><span class="stat-value" id="statCritical">0</span></div>
+ <div class="stat-card high"><span class="stat-label">High</span><span class="stat-value" id="statHigh">0</span></div>
+ <div class="stat-card medium"><span class="stat-label">Medium</span><span class="stat-value" id="statMedium">0</span></div>
+ </section>
+
+ <main class="layout">
+ <section class="panel patients-panel">
+ <div class="panel-head">
+ <h2>Monitored patients</h2>
+ <span class="hint">BP · glucose · weight streams</span>
+ </div>
+ <div class="patient-grid" id="patientGrid"></div>
+ </section>
+
+ <aside class="panel queue-panel">
+ <div class="panel-head">
+ <h2>Escalation queue</h2>
+ <span class="hint">Pathway rules · recommended actions</span>
+ </div>
+ <div class="queue-list" id="queueList"></div>
+ </aside>
+ </main>
+ </div>
+ <script src="/static/app.js"></script>
+</body>
+</html>
